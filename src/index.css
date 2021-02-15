@@ -43,6 +43,22 @@ ol, ul {
   background: #ddd;
 }
 
+.move-btn {
+  border: none;
+  outline: none;
+  margin-bottom: 3px;
+  background: silver;
+  padding: 3px 6px;
+}
+
+.move-btn.active {
+  box-shadow: 1px 2px;
+}
+
+.move-btn:hover {
+  cursor: pointer;
+}
+
 .game {
   display: flex;
   flex-direction: row;

@@ -98,7 +98,7 @@ class Game extends React.Component {
                         {
                             this.state.history.map((element, idx) => {
                                 return (<li>
-                                    <button onClick={()=>this.handleButtonClick(idx)}>
+                                    <button className={"move-btn " + (idx === this.state.activeHistoryIdx && "active")} key={idx} onClick={()=>this.handleButtonClick(idx)}>
                                         {`Go to ${idx > 0 ? "move #" + idx : "game start"}`}
                                     </button>
                                 </li>);
