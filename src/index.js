@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -20,23 +21,19 @@ function Board(props) {
         />;
     }
 
+    let squareIdx = 0;
+    let arr = [1, 2, 3];
     return (
         <div>
-            <div className="board-row">
-                {renderSquare(0)}
-                {renderSquare(1)}
-                {renderSquare(2)}
-            </div>
-            <div className="board-row">
-                {renderSquare(3)}
-                {renderSquare(4)}
-                {renderSquare(5)}
-            </div>
-            <div className="board-row">
-                {renderSquare(6)}
-                {renderSquare(7)}
-                {renderSquare(8)}
-            </div>
+            {
+                arr.map(i => {
+                    return (
+                        <div className="board-row">
+                            { arr.map(i => renderSquare(squareIdx++)) }
+                        </div>
+                    );
+                })
+            }
         </div>
     );
 }
