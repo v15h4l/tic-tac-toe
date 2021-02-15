@@ -80,6 +80,8 @@ class Game extends React.Component {
 
         if (winner) {
             status = "Winner : " + winner;
+        } else if (calculateDraw(squares)) {
+            status = "Match Drawn";
         } else {
             status = "Next player : " + (xIsNext ? "X" : "O");
         }
@@ -126,6 +128,10 @@ function calculateWinner(squares) {
         }
     }
     return null;
+}
+
+function calculateDraw(squares) {
+    return !squares.some( sqr => !sqr);
 }
 
 // ========================================
